@@ -1,0 +1,187 @@
+@import 'reset';
+
+body{
+    font-family: sans-serif;
+    .hero{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/background.jpg');
+        background-position: center;
+        background-size: cover;
+        position: absolute;
+
+        .form-box{
+            width: 380px;
+            max-width: 80%;
+            min-height: 480px;
+            position: relative;
+            background: white;
+            margin: 6% auto;
+            padding: 5px;
+            overflow: hidden;
+
+            .button-box{
+                width: 58%;
+                margin: 35px auto;
+                position: relative;
+                box-shadow: 0 0 20px 9px #ff61241f;
+                border-radius: 30px;
+
+                #btn{
+                    top: 0;
+                    left: 0;
+                    position: absolute;
+                    width: 50%;
+                    border-radius: 30px;
+                    height: 100%;
+                    background: linear-gradient(to right, #ff105f, #ffad06);
+                    transition: .5s;
+                }
+
+                .toggle-btn{
+                    width: 48%;
+                    padding: 10px 2.5%;
+                    display: inline-block;
+                    cursor: pointer;
+                    background: transparent;
+                    border: 0;
+                    outline: none;
+                    position: relative;
+                }
+            }
+
+            .social-icons{
+                margin: 30px auto;
+                text-align: center;
+                a{
+                    img{
+                        width: 30px;
+                        margin: 0 12px;
+                        box-shadow: 0 0 20px 0 #7f7f7f3d;
+                        cursor: pointer;
+                        border-radius: 50%;
+                    }                    
+                }                
+            }
+
+            .input-group{
+                position: absolute;
+                top: 180px;
+                width: 74%; //280px
+                transition: .5s;
+
+                .input-field{
+                    width: 100%;
+                    padding: 10px 0;
+                    margin: 5px 0;
+                    border: none;
+                    border-bottom: 1px solid #999;
+                    background: transparent;
+                    outline: none;
+                }
+
+                .check-box{
+                    margin: 30px 10px 35px 0px;
+                }
+
+                span{
+                    color: #777;
+                    font-size: 12px;
+                    bottom: 68px;
+                    position: absolute;
+                }
+
+                .submit-btn{
+                    width: 85%;
+                    padding: 10px 30px;
+                    cursor: pointer;
+                    display: block;
+                    margin: auto;
+                    border: 0;
+                    outline: none;
+                    border-radius: 30px;
+                    background: linear-gradient(to right, #ff105f, #ffad06);
+                }
+
+            }
+
+            #login{
+                left: 13%;
+            }
+
+            #register{
+                left: 450px;
+            }
+
+            footer{
+                position: absolute;
+                bottom: 10px;
+                
+        
+                p.attribution{
+                    text-align: center;
+                    font-size: .65rem;
+
+                    .svg{            
+                        width: 15%;
+                        min-width: 60px;
+                        margin: 0px auto;
+                        margin-bottom: -5px;
+            
+                        &:hover{
+                            fill: #ff673b;
+                        }
+                    }
+                } 
+            }
+        }        
+    }
+
+    @media screen and (max-width: 350px) {
+        .hero{
+            .form-box{
+                .button-box{
+                    .toggle-btn{
+                        font-size: .7rem;
+                    }
+                }
+
+                .social-icons{
+                    a{
+                        img{
+                            width: 25px;
+                            margin: 0 6px; 
+                        }
+                    }
+                }
+
+                footer{
+                    p.attribution{
+                        font-size: .55rem;
+                        padding: 0 10px;
+                    }
+        
+                    .svg{            
+                        width: 25%;
+                        margin-bottom: -3px;
+                    } 
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 250px) {
+        .hero{
+            .form-box{
+                .button-box{
+                    .toggle-btn{
+                        width: 45%;
+                    }
+                }
+            }
+        }
+    }
+}
+
