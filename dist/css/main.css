@@ -35,8 +35,6 @@ body .hero .form-box {
   position: relative;
   background: white;
   margin: 6% auto;
-  padding: 5px;
-  overflow: hidden;
 }
 
 body .hero .form-box .button-box {
@@ -57,8 +55,8 @@ body .hero .form-box .button-box #btn {
   height: 100%;
   background: -webkit-gradient(linear, left top, right top, from(#ff105f), to(#ffad06));
   background: linear-gradient(to right, #ff105f, #ffad06);
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: .1s;
+  transition: .1s;
 }
 
 body .hero .form-box .button-box .toggle-btn {
@@ -73,7 +71,7 @@ body .hero .form-box .button-box .toggle-btn {
 }
 
 body .hero .form-box .social-icons {
-  margin: 30px auto;
+  margin: 30px auto 20px;
   text-align: center;
 }
 
@@ -86,15 +84,34 @@ body .hero .form-box .social-icons a img {
   border-radius: 50%;
 }
 
-body .hero .form-box .input-group {
+body .hero .form-box .form-scroll {
+  width: 100%;
+  position: relative;
   position: absolute;
   top: 180px;
-  width: 74%;
-  -webkit-transition: .5s;
-  transition: .5s;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (100%)[2];
+      grid-template-columns: repeat(2, 100%);
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  margin-bottom: 30px;
 }
 
-body .hero .form-box .input-group .input-field {
+body .hero .form-box .form-scroll::-webkit-scrollbar {
+  width: 0;
+}
+
+body .hero .form-box .form-scroll .input-group {
+  width: 100%;
+  padding: 0 13%;
+  -webkit-transition: .5s;
+  transition: .5s;
+  scroll-snap-align: start;
+}
+
+body .hero .form-box .form-scroll .input-group .input-field {
   width: 100%;
   padding: 10px 0;
   margin: 5px 0;
@@ -104,18 +121,16 @@ body .hero .form-box .input-group .input-field {
   outline: none;
 }
 
-body .hero .form-box .input-group .check-box {
+body .hero .form-box .form-scroll .input-group .check-box {
   margin: 30px 10px 35px 0px;
 }
 
-body .hero .form-box .input-group span {
+body .hero .form-box .form-scroll .input-group span {
   color: #777;
-  font-size: 12px;
-  bottom: 68px;
-  position: absolute;
+  font-size: 10px;
 }
 
-body .hero .form-box .input-group .submit-btn {
+body .hero .form-box .form-scroll .input-group .submit-btn {
   width: 85%;
   padding: 10px 30px;
   cursor: pointer;
@@ -126,14 +141,6 @@ body .hero .form-box .input-group .submit-btn {
   border-radius: 30px;
   background: -webkit-gradient(linear, left top, right top, from(#ff105f), to(#ffad06));
   background: linear-gradient(to right, #ff105f, #ffad06);
-}
-
-body .hero .form-box #login {
-  left: 13%;
-}
-
-body .hero .form-box #register {
-  left: 450px;
 }
 
 body .hero .form-box footer {
@@ -164,6 +171,9 @@ body .hero .form-box footer p.attribution .svg:hover {
   body .hero .form-box .social-icons a img {
     width: 25px;
     margin: 0 6px;
+  }
+  body .hero .form-box .form-scroll .input-group span {
+    font-size: 8px;
   }
   body .hero .form-box footer p.attribution {
     font-size: .55rem;

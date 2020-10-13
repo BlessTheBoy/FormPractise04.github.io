@@ -3,13 +3,31 @@ let y = document.getElementById('register');
 let z = document.getElementById('btn');
 
 function login(){
-    x.style.left = '13%';
-    y.style.left = '450px';
-    z.style.left = '0px';
+    x.scrollIntoView({ behavior: 'smooth'});
 }
 
 function register(){
-    x.style.left = '-400px';
-    y.style.left = '13%';
-    z.style.left = '50%';
+    y.scrollIntoView({ behavior: 'smooth'});
+}
+
+const formScroll = document.getElementById('form-scroll');
+
+// formScroll.addEventListener("scroll", (event) => {
+//     let scroll = document.querySelector('#login').scrollLeft;
+//     console.log(scroll)
+// });
+
+function scrollFunction (){
+    var elm = document.getElementById('login')
+    var p = elm.parentNode,
+        pos = (elm.scrollLeft || p.scrollLeft) / (p.scrollWidth - p.clientWidth ) * 100;
+    console.log(pos);
+
+    adjustButton(pos);
+}
+
+function adjustButton(x){
+    let btn = document.getElementById('btn');
+    var m = (x/2) + '%';
+    btn.style.marginLeft = m;
 }
