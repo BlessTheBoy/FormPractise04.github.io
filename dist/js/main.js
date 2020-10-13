@@ -21,8 +21,7 @@ function scrollFunction (){
     var elm = document.getElementById('login')
     var p = elm.parentNode,
         pos = (elm.scrollLeft || p.scrollLeft) / (p.scrollWidth - p.clientWidth ) * 100;
-    console.log(pos);
-
+        
     adjustButton(pos);
 }
 
